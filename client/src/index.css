@@ -28,3 +28,13 @@ header a {
   justify-content: space-evenly;
   
 }
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.title {
+  padding-left: 50px;
+}

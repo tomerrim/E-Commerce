@@ -10,7 +10,7 @@ export const getOrderById = async (req, res) => {
     }
 };
 
-export const createNewUser = async (req, res) => {
+export const createNewOrder = async (req, res) => {
   try {
     const newOrder = new Order({
       orderItems: req.body.orderItems.map((item) => ({

@@ -1,21 +1,30 @@
-import data from "../data";
+import { useState, useEffect, Fragment } from "react";
+import { customFetch } from "../utils/customFetch";
+import { Product } from "../components/Product/Product";
+// import data from "../data";
 
 export const HomePage = () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const response = await customFetch("api/products", "GET");
+        //console.log(response)
+        setProducts(response);
+      };    
+      fetchData();
+    }, []);
+    
+    console.log(products);
     return (
       <>
-        <h1>Products</h1>
+        <h1 className="title">Products</h1>
         <div className="products">
-          {data.products.map((product) => (
-            <div key={product.token} className="product">
-              <img
-                src={product.imageUrl}
-                alt={product.name}
-                width={500}
-                height={600}
-              />
-              <p>{product.name}</p>
-              <p>{product.price}$</p>
-            </div>
+          {products.map((product) => (
+            <Fragment key={product.token}>
+              <Product product={product}/>
+            </Fragment>
           ))}
         </div>
       </>
