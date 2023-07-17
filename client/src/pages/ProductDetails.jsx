@@ -15,11 +15,11 @@ export const ProductDetails = () => {
       fetchData();
     }, [id]);
 
-    console.log(product)
+    // console.log(product)
     return (
-        <div>
+        <div className="productDetails">
             <h1>Product Details</h1>
-            <h2>{product && product.title}</h2>
+            <h2>{product.title}</h2>
         </div>
     )
 }

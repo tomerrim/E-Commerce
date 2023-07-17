@@ -5,7 +5,7 @@ export const Product = ({product}) => {
 
     const navigate = useNavigate();
     const goToDetails = () => {
-        navigate(`/product/${product.title}`);
+        navigate(`/product/${product._id}`);
     }
     return (
       <div className="product" onClick={goToDetails}>
