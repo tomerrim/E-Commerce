@@ -1,23 +1,23 @@
-import data from "../data";
-
+import { useEffect, useState } from "react";
+import { Products } from "../components/Products/Products";
+import axios from "axios";
+import "../index.css";
 export const HomePage = () => {
-    return (
-      <>
-        <h1>Products</h1>
-        <div className="products">
-          {data.products.map((product) => (
-            <div key={product.token} className="product">
-              <img
-                src={product.imageUrl}
-                alt={product.name}
-                width={500}
-                height={600}
-              />
-              <p>{product.name}</p>
-              <p>{product.price}$</p>
-            </div>
-          ))}
-        </div>
-      </>
-    );
-}
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const getProducts = async () => {
+      const response = await axios.get("/products");
+      setProducts(response.data);
+    };
+    getProducts();
+  }, []);
+
+  return (
+    <>
+      <h1>Products</h1>
+      <div className="products">
+        <Products products={products} />
+      </div>
+    </>
+  );
+};

@@ -1,0 +1,38 @@
+:root
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    transition: box-shadow 0.2s ease-in-out, scale 0.2s ease-in-out;
+    box-shadow: none;
+    scale: 1;
+}
+
+.product-card:hover {
+    box-shadow: 10px 10px 10px #888;
+    scale: 1.02;
+}
+
+.card-image-page {
+    max-width: auto;
+    height: 400px;
+    object-fit: contain;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.text-shortener {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

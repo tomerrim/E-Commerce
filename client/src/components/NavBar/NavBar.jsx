@@ -1,6 +1,7 @@
 import { Container, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap"
 import { Link, useNavigate } from "react-router-dom";
+import "./NavBar.css";
 
 export const NavBar = () => {
 
@@ -9,8 +10,8 @@ export const NavBar = () => {
     return (
       <header className="App-header">
         <Navbar bg="dark" varient="dark">
-          <Link onClick={() => navigate(-1)}>Back</Link>
-          <Container className="container">
+          <Link className="ms-3" onClick={() => navigate(-1)}>Back</Link>
+          <Container>
             <LinkContainer to={"/"}>
               <Navbar.Brand>
                 <img

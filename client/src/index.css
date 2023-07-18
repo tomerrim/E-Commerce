@@ -12,11 +12,6 @@ code {
     monospace;
 }
 
-header {
-  background-color: #404040;
-  padding: 1rem;
-}
-
 header a {
   color: #ffffff;
   font-weight: bold;
@@ -26,5 +21,4 @@ header a {
 .container{
   display: flex;
   justify-content: space-evenly;
-  
 }
