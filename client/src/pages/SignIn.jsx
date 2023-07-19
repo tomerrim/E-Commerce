@@ -34,7 +34,7 @@ export const SignIn = () => {
 
   return (
     <Container className="small-container">
-      <Title>Sign In</Title>
+      <Title title={"Sign In"}/>
       <h1 className="my-3">Sign In</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="email">

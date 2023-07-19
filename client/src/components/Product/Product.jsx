@@ -9,7 +9,7 @@ export const Product = ({ product }) => {
 
   return (
     <Card className="product-card">
-      <Link to={`/products/${product.token}`}>
+      <Link to={`/products/token/${product.token}`}>
         <Card.Img
           variant="top"
           src={product.image}
