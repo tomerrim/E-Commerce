@@ -46,7 +46,7 @@ export const CartPage = () => {
             <Title title={"Shopping Cart"}/>
             <Row>
                 <Col md={8}>
-                    <ItemsInCart handleRemoveItem={handleRemoveItem} handleCheckout={handleCheckout} cartItems={cartItems}/>
+                    <ItemsInCart handleRemoveItem={handleRemoveItem} handleUpdateCart={handleUpdateCart} cartItems={cartItems}/>
                 </Col>
                 <Col md={4}>
                     <Checkout cartItems={cartItems} handleCheckout={handleCheckout}/>
