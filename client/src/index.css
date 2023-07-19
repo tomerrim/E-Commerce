@@ -18,7 +18,11 @@ header a {
   text-decoration: none;
 }
 
-.container{
+/* .container{
   display: flex;
   justify-content: space-evenly;
 }
+
+.small-container {
+  flex-direction: column;
+} */
