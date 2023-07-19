@@ -52,7 +52,6 @@ export const ProductPage = () => {
     };
     getProduct();
   }, [token]);
-  console.log(product);
   return (
     <div>
         {loading ? (
