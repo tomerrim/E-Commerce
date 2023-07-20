@@ -22,4 +22,26 @@ export const handleAddToCart = async (product, cartItems, ctxDispatch) => {
 
 export const getError = (error) => {
     return error.message && error.response.data.message ? error.response.data.message : error.message;
+};
+
+export const getFilterUrl = (searchFromURI, filter, skipPathName) => {
+    const searchParams = new URLSearchParams(searchFromURI);
+    const category = searchParams.get("category") || "all";
+    const query = searchParams.get("query") || "";
+    const page = searchParams.get("page") || 1;
+    const price = searchParams.get("price") || "";
+    const rating = searchParams.get("rating") || "";
+    const order = searchParams.get("order") || "";
+    
+    const filterPage = filter.page || page;
+    const filterQuery = filter.query || query;
+    const filterCategory = filter.category || category;
+    const filterPrice = filter.price || price;
+    const filterRating = filter.rating || rating;
+    const sortOrder = filter.order || order;
+
+    const link = `${
+      skipPathName ? "" : "/search"
+    }?category=${filterCategory}&query=${filterQuery}&page=${filterPage}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}`;
+    return link;
 }

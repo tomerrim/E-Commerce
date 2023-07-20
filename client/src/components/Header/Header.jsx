@@ -1,14 +1,15 @@
 import { Badge, Container, NavDropdown, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap"
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import "./Header.css";
 import { useContext } from "react";
 import { Store } from "../../context/store";
 import axios from "axios";
 import { handleAddToCart } from "../../utils";
 import { USER_SIGNOUT } from "../../reducers/Actions";
+import { SearchBar } from "../SearchBar";
 
-export const NavBar = () => {
+export const Header = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -50,7 +51,7 @@ export const NavBar = () => {
             </Navbar.Brand>
           </LinkContainer>
           <nav className="d-flex mx-auto align-items-center" onDrop={handleDrop} onDragOver={(e) => e.preventDefault()}>
-            <input type="text" placeholder="Search..." />
+            <SearchBar/>
           </nav>
           <Link to="/cart" className="nav-link me-4 ms-4">
             <i className="fas fa-shopping-cart text-white"></i>
