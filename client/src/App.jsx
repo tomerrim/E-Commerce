@@ -10,6 +10,7 @@ import { ProductPage } from "./pages/ProductPage";
 import { Footer } from "./components/Footer";
 import { CartPage } from "./pages/CartPage";
 import { OrderPage } from "./pages/OrderPage";
+import { ShippingAddressPage } from "./pages/ShippingAddressPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/products/token/:token" element={<ProductPage />} />
             <Route path="/cart" element={<CartPage/>}/>
+            <Route path="/shipping" element={<ShippingAddressPage/>}/>
             <Route path="/order/:id" element={<OrderPage/>}/>
           </Routes>
         </main>
