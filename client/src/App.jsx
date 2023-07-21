@@ -11,6 +11,8 @@ import { Footer } from "./components/Footer";
 import { CartPage } from "./pages/CartPage";
 import { OrderPage } from "./pages/OrderPage";
 import { ShippingAddressPage } from "./pages/ShippingAddressPage";
+import { PaymentPage } from "./pages/PaymentPage";
+import { SearchPage } from "./pages/SearchPage";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path="/cart" element={<CartPage/>}/>
             <Route path="/shipping" element={<ShippingAddressPage/>}/>
             <Route path="/order/:id" element={<OrderPage/>}/>
+            <Route path="/payment" element={<PaymentPage/>}/>
+            <Route path="/search" element={<SearchPage/>}/>
           </Routes>
         </main>
         <Footer/>
