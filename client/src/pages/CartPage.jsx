@@ -20,7 +20,7 @@ export const CartPage = () => {
 
     const handleUpdateCart = async (item, quantity) => {
         try {
-            const { data } = await axios.get(`api/products/${item._id}`);
+            const { data } = await axios.get(`products/${item._id}`);
             if(data.countInStock < quantity) {
                 toast.error("Sorry, Product is out of stock");
                 return;

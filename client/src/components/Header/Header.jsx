@@ -63,7 +63,7 @@ export const Header = () => {
           </Link>
           {userInfo ? (
             <NavDropdown className="text-white me-5" title={userInfo.name} id="navbarDropDown">
-              <Link onClick={handleSignout} to="#signout" className="dropdown-item">Sign OUt</Link>
+              <Link onClick={handleSignout} to="#signout" className="dropdown-item">Sign Out</Link>
             </NavDropdown>
           ) : (
             <>

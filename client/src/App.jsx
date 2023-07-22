@@ -13,6 +13,7 @@ import { OrderPage } from "./pages/OrderPage";
 import { ShippingAddressPage } from "./pages/ShippingAddressPage";
 import { PaymentPage } from "./pages/PaymentPage";
 import { SearchPage } from "./pages/SearchPage";
+import { SubmitOrderPage } from "./pages/SubmitOrderPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/products/token/:token" element={<ProductPage />} />
             <Route path="/cart" element={<CartPage/>}/>
             <Route path="/shipping" element={<ShippingAddressPage/>}/>
+            <Route path="/placeorder" element={<SubmitOrderPage/>}/>
             <Route path="/order/:id" element={<OrderPage/>}/>
             <Route path="/payment" element={<PaymentPage/>}/>
             <Route path="/search" element={<SearchPage/>}/>

@@ -7,8 +7,8 @@ export const Checkout = ({cartItems, handleCheckout}) => {
                 <ListGroup variant="flush">
                     <ListGroup.Item>
                         <h3>
-                            Subtotal ({cartItems.reduce((a,c) => a + c.quantity, 0)})
-                            Items) : ${cartItems.reduce((a,c) => a + c.price * c.quantity, 0).toFixed(2)}
+                            Subtotal ({cartItems.reduce((a,c) => a + c.quantity, 0)}) <br />
+                            Items: ${cartItems.reduce((a,c) => a + c.price * c.quantity, 0).toFixed(2)}
                         </h3>
                     </ListGroup.Item>
                     <ListGroup.Item>

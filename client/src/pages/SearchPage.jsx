@@ -102,7 +102,7 @@ export const SearchPage = () => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const { data } = await axios.get(`/api/products/categories`);
+        const { data } = await axios.get(`/products/categories`);
         setCategories(data);
       } catch (error) {
         toast.error(getError(error));
@@ -116,7 +116,7 @@ export const SearchPage = () => {
       try {
         dispatch({ type: GET_REQUEST });
         const { data } = await axios.get(
-          `/api/products/search?query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}&page=${page}`
+          `/products/search?query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}&page=${page}`
         );
         dispatch({
           type: GET_SUCCESS,
