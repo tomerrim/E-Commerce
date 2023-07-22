@@ -27,11 +27,11 @@ export const getError = (error) => {
 export const getFilterUrl = (searchFromURI, filter, skipPathName) => {
     const searchParams = new URLSearchParams(searchFromURI);
     const category = searchParams.get("category") || "all";
-    const query = searchParams.get("query") || "";
+    const query = searchParams.get("query") || "all";
     const page = searchParams.get("page") || 1;
-    const price = searchParams.get("price") || "";
-    const rating = searchParams.get("rating") || "";
-    const order = searchParams.get("order") || "";
+    const price = searchParams.get("price") || "all";
+    const rating = searchParams.get("rating") || "all";
+    const order = searchParams.get("order") || "newest";
     
     const filterPage = filter.page || page;
     const filterQuery = filter.query || query;

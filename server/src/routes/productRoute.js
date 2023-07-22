@@ -6,12 +6,14 @@ const productRouter = express.Router();
 
 productRouter.get("/", expressAsyncHandler(getAllProducts));
 
+
 productRouter.get("/categories", expressAsyncHandler(getCategories));
 
 productRouter.get("/token/:token", expressAsyncHandler(getProductByToken));
 
+productRouter.get("/search", expressAsyncHandler(searchProduct));
+
 productRouter.get("/:id", expressAsyncHandler(getProductById));
 
-productRouter.post("/search", expressAsyncHandler(searchProduct));
 
 export default productRouter;

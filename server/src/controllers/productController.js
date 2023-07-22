@@ -22,8 +22,7 @@ export const getProductByToken = async (req, res) => {
 };
 
 export const getProductById = async (req, res) => {
-  const { id } = req.params;
-  const product = await Product.findById(id);
+  const product = await Product.findById(req.params.id);
   product ? res.send(product) : res.status(404).send("Product not found");
 };
 

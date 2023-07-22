@@ -85,7 +85,7 @@ export const SearchPage = () => {
   const category = searchParams.get("category") || "all";
   const price = searchParams.get("price") || "all";
   const rating = searchParams.get("rating") || "all";
-  const query = searchParams.get("query") || "";
+  const query = searchParams.get("query") || "all";
   const order = searchParams.get("order") || "desc";
   const page = searchParams.get("page") || 1;
 
@@ -116,7 +116,11 @@ export const SearchPage = () => {
       try {
         dispatch({ type: GET_REQUEST });
         const { data } = await axios.get(
-          `/products/search?query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}&page=${page}`
+          `/products/search`, {
+            params: {
+              query, category, price, rating, order, page
+            }
+          }
         );
         dispatch({
           type: GET_SUCCESS,
