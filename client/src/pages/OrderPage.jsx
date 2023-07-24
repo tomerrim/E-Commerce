@@ -52,7 +52,7 @@ export const OrderPage = () => {
             dispatch({type: GET_REQUEST});
 
             try {
-                const { data } = await axios.get(`/api/orders/${orderId}`, {
+                const { data } = await axios.get(`/api/order/${orderId}`, {
                     headers: {
                         Authorization: `Bearer ${userInfo.token}`
                     }

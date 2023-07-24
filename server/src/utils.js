@@ -5,12 +5,16 @@ export const generateToken = (user) => {
 }
 
 export const isAuth= (req, res, next) => {
-    const token = req.headers.authorization;
-    if(token){
+    // const token = req.headers.authorization;
+    const bearerToken = req.headers.Authorization;
+
+    if(bearerToken){
+        const token = bearerToken.split(" ")[1];
         jwt.verify(token, process.env.JWT, (err, decoded) => {
             if(err){
-                return res.status(401).json({message: "Invalid username or password"});
+                return res.status(401).json({message: `Token verification failed: ${err.message}`});
             }
+            console.log("Decoded Token: ", decoded);
             req.user = decoded;
             next();
         });
