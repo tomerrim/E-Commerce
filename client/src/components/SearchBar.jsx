@@ -6,7 +6,7 @@ import { Button, Form, FormControl, InputGroup } from "react-bootstrap";
 export const SearchBar = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
-  const { search } = useLocation();
+  const { search,pathname } = useLocation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,8 +15,8 @@ export const SearchBar = () => {
   };
 
   useEffect(() => {
-    if (!query) return;
-    const link = getFilterUrl(search, { query });
+    if (pathname !== "/search" && !query) return;
+    const link = getFilterUrl(search, { query: query || "all" });
     navigate(link);
   }, [query, navigate, search]);
 

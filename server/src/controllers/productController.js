@@ -79,7 +79,12 @@ export const searchProduct = async (req, res) => {
     ...priceFilter
     }).sort(sortOrder).skip((page - 1) * pageSize).limit(pageSize);
   
-  const countProduct = products.length;
+  const countProducts = await Product.countDocuments({
+    ...queryFilter,
+    ...categoryFilter,
+    ...ratingFilter,
+    ...priceFilter,
+  });
 
-  res.send({ products, page, countProduct, pages: Math.ceil(countProduct / pageSize) });
+  res.send({ products, page, countProducts, pages: Math.ceil(countProducts / pageSize) });
 };

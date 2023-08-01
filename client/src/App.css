@@ -49,5 +49,5 @@ a {
 
 .current-page-number {
   color: #000000;
-  background-color: #f0c040;
+  background-color: #f0c040 !important;
 }
