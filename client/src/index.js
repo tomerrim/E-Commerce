@@ -6,8 +6,12 @@ import App from "./App";
 import { HelmetProvider } from "react-helmet-async";
 import axios from "axios";
 import { StoreProvider } from "./context/store";
+import dotenv from "dotenv";
+dotenv.config();
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+//axios.defaults.baseURL = "http://localhost:5000/api";
+
+axios.defaults.baseURL = process.env.REACT_APP_SERVER_API;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
