@@ -14,9 +14,7 @@ const MONGO_URI = process.env.MONGODB_URI;
 
 const app = express();
 
-app.use(cors({
-  origin: "https://tomer-e-commerce.vercel.app/",
-}))
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
